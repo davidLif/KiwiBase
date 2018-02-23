@@ -1,59 +1,26 @@
-################################################################################
-# Automatically-generated file. Do not edit!
-################################################################################
+CXXFLAGS =	-O0 -g3 -Wall -fmessage-length=0
+LINK_LIBRARY_COMMAND = ar -rcs
+COMPILE_COMMAND = g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD
 
--include ../makefile.init
+OBJS = KiwiPQ.o KvChunck.o PutPendingItem.o
 
-RM := rm -rf
+LIBS =
 
-# All of the sources participating in the build are defined here
--include sources.mk
--include subdir.mk
--include PendingPuts/subdir.mk
--include objects.mk
+TARGET = KiwiPQ.a	
 
-ifneq ($(MAKECMDGOALS),clean)
-ifneq ($(strip $(CC_DEPS)),)
--include $(CC_DEPS)
-endif
-ifneq ($(strip $(C++_DEPS)),)
--include $(C++_DEPS)
-endif
-ifneq ($(strip $(C_UPPER_DEPS)),)
--include $(C_UPPER_DEPS)
-endif
-ifneq ($(strip $(CXX_DEPS)),)
--include $(CXX_DEPS)
-endif
-ifneq ($(strip $(CPP_DEPS)),)
--include $(CPP_DEPS)
-endif
-ifneq ($(strip $(C_DEPS)),)
--include $(C_DEPS)
-endif
-endif
+KiwiPQ.o: ../KiwiPQ.cpp ../KiwiPQ.h KvChunck.o
+	$(COMPILE_COMMAND) ../KiwiPQ.cpp -o KiwiPQ.o
 
--include ../makefile.defs
+KvChunck.o: ../KvChunck.cpp ../KvChunck.h ../Struct_KeychunckMeta.h PutPendingItem.o
+	$(COMPILE_COMMAND) ../KvChunck.cpp -o KvChunck.o
 
-# Add inputs and outputs from these tool invocations to the build variables 
+PutPendingItem.o: ../PendingPuts/PutPendingItem.cpp ../PendingPuts/PutPendingItem.h
+	$(COMPILE_COMMAND) ../PendingPuts/PutPendingItem.cpp -o PutPendingItem.o
 
-# All Target
-all: KiwiBaseProject.exe
+$(TARGET):	$(OBJS)
+	$(LINK_LIBRARY_COMMAND) $(TARGET) $(OBJS) $(LIBS)
 
-# Tool invocations
-KiwiBaseProject.exe: $(OBJS) $(USER_OBJS)
-	@echo 'Building target: $@'
-	@echo 'Invoking: Cygwin C++ Linker'
-	g++  -o"KiwiBaseProject.exe" $(OBJS) $(USER_OBJS) $(LIBS)
-	@echo 'Finished building target: $@'
-	@echo ' '
+all:	KiwiPQ.a
 
-# Other Targets
 clean:
-	-$(RM) $(CC_DEPS)$(C++_DEPS)$(EXECUTABLES)$(OBJS)$(C_UPPER_DEPS)$(CXX_DEPS)$(CPP_DEPS)$(C_DEPS) KiwiBaseProject.exe
-	-@echo ' '
-
-.PHONY: all clean dependents
-.SECONDARY:
-
--include ../makefile.targets
+	rm -f $(OBJS) $(TARGET)
