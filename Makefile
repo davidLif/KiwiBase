@@ -1,10 +1,10 @@
 CXXFLAGS =	-O2 -g -Wall -fmessage-length=0
 
-OBJS =		KiwiPQ.o
+OBJS =		
 
 LIBS =
 
-TARGET =	KiwiBaseProject.exe
+TARGET =	
 
 $(TARGET):	$(OBJS)
 	$(CXX) -o $(TARGET) $(OBJS) $(LIBS)

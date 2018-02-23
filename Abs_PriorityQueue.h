@@ -12,7 +12,7 @@ template <class K, class V>
 class Abs_PriorityQueue {
 public:
 	Abs_PriorityQueue() {};
-	//virtual void Insert(K key, V value) = 0;
+	virtual void Insert(K key, V value) = 0;
 	//virtual V getAndRemoveMin() = 0;
 	virtual ~Abs_PriorityQueue() {};
 };

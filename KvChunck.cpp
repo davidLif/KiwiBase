@@ -8,12 +8,17 @@
 #include "KvChunck.h"
 
 template <class K, class V>
-KvChunck<K,V>::KvChunck(K minKey) {
-	// TODO Auto-generated constructor stub
+KvChunck<K,V>::KvChunck(K minKey, int maxNumOfOperatingThreads) {
+
 	m_minKey = minKey;
+	kCounter = 0;
+	vCounter = 0;
+
+	m_ppa = new PutPendingItem[maxNumOfOperatingThreads];
 }
 
 template <class K, class V>
 KvChunck<K,V>::~KvChunck() {
-	// TODO Auto-generated destructor stub
+
+	delete[] m_ppa;
 }
