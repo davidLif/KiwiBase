@@ -8,8 +8,13 @@
 #ifndef KVCHUNCK_H_
 #define KVCHUNCK_H_
 
+#include <cstddef>
 #include "Struct_KeychunckMeta.h"
 #include "PendingPuts/PutPendingItem.h"
+
+#define CHUNK_EMPTY_VERSION 0
+#define CHUNK_FREEZE_VERSION 1
+#define CHUNK_CANCEL_REMOVE_NEXT_VERSION -1
 
 #ifndef CHUNCK_VALUEARRSIZE
 #define CHUNCK_VALUEARRSIZE
@@ -32,12 +37,27 @@ private:
 	KvChunck<K,V> * m_next;
 	bool m_isNextMutable; //called "mark" in the article
 
+	//rebalance vars
+	KvChunck<K,V> * m_parent;
+
 	PutPendingItem m_ppa[];
 
 public:
 	KvChunck(K minKey, int maxNumOfOperatingThreads);
+
+	int pairSpaceAlloc(K key, V value);
+	int setPairVersion(int orderArrIndex, int version);
+	void setPairInChunkSpace(int orderArrIndex, K key);
+
+	void clearThreadPpaDecleration();
+
+	KvChunck<K,V> * rebalance();
+	static bool shouldRebalance(KvChunck<K,V> * chunk);
+
 	K getMinKey() { return m_minKey; };
 	KvChunck<K,V> * getNextChunk() { return m_next; };
+	bool infantChunkRebalancing();
+
 	virtual ~KvChunck();
 };
 

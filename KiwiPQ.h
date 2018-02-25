@@ -10,6 +10,8 @@
 
 #include <forward_list>
 #include <cstddef>
+#include <chrono>
+#include <thread>
 #include "KvChunck.h"
 #include "ABS_PriorityQueue.h"
 
@@ -26,8 +28,16 @@ public:
 private:
 	forward_list<Chunck_P> m_chunckLst;
 
+	int globalTreeVersion;
+
 	Chunck_P getFloorChunckByIndex(unsigned int key);
 	Chunck_P getFloorChunckByIteration(unsigned int key, Chunck_P searchStartChunk);
+
+	enum PutRetryState_e {
+		FullRetry_e = 0,
+		SemiRetry_e = 1,
+		SuccessfulExit_e = 2
+	};
 };
 
 #endif /* KIWIPQ_H_ */

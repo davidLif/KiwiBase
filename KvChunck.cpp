@@ -18,6 +18,24 @@ KvChunck<K,V>::KvChunck(K minKey, int maxNumOfOperatingThreads) {
 }
 
 template <class K, class V>
+int KvChunck<K,V>::pairSpaceAlloc(K key, V value){
+	return 1;
+}
+
+template <class K, class V>
+bool KvChunck<K,V>::infantChunkRebalancing(){
+	if (m_parent != NULL) {
+		m_parent.rebalance();
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+
+
+template <class K, class V>
 KvChunck<K,V>::~KvChunck() {
 
 	delete[] m_ppa;
