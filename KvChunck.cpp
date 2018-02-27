@@ -23,6 +23,12 @@ int KvChunck<K,V>::pairSpaceAlloc(K key, V value){
 }
 
 template <class K, class V>
+bool KvChunck<K,V>::findValue(K key, V * outValP){
+	outValP = NULL;
+	return false;
+}
+
+template <class K, class V>
 bool KvChunck<K,V>::infantChunkRebalancing(){
 	if (m_parent != NULL) {
 		m_parent.rebalance();
@@ -32,8 +38,6 @@ bool KvChunck<K,V>::infantChunkRebalancing(){
 		return false;
 	}
 }
-
-
 
 template <class K, class V>
 KvChunck<K,V>::~KvChunck() {

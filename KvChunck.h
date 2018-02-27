@@ -49,6 +49,8 @@ public:
 	int setPairVersion(int orderArrIndex, int version);
 	void setPairInChunkSpace(int orderArrIndex, K key);
 
+	bool findValue(K key, V * outValP);
+
 	void clearThreadPpaDecleration();
 
 	KvChunck<K,V> * rebalance();

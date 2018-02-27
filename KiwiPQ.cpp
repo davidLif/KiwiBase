@@ -13,18 +13,50 @@ KiwiPQ::KiwiPQ() : Abs_PriorityQueue<unsigned int, int>::Abs_PriorityQueue() {
 	// TODO Auto-generated constructor stub
 }
 
-void KiwiPQ::Insert(unsigned int key, int value) {
+int KiwiPQ::popMin() {
+	//get the first chunk out of the index
 
+	//ask chunk to popMin
+
+	//if not item is returned, try the next one
+
+	return -1;
+}
+
+int KiwiPQ::getValue(unsigned int key) {
+	//Get to the chunk where the data with the given key should be using both index and iteration
+	Chunck_P getWorkingChunk = getFloorChunckByIndex(key);
+	getWorkingChunk = getFloorChunckByIteration(key, getWorkingChunk);
+
+	//No scans, so no put data to try and update
+	int * outValP = NULL;
+	bool foundPair = getWorkingChunk->findValue(key, outValP);
+
+	if (foundPair) {
+		return *outValP;
+	}
+	else { //return a dummy, or any other indication of failure
+		return -1;
+	}
+}
+
+void KiwiPQ::insert(unsigned int key, int value) {
+
+	int numOfRetries = -1;
 	PutRetryState_e retryState = KiwiPQ::FullRetry_e;
 
 	while (retryState == KiwiPQ::FullRetry_e) {
+		//Generate a new key according to the <<proprity + retries, element>, element> policy
+		numOfRetries++;
+		unsigned int fixedKey = priorityKeyRecalc(key, numOfRetries, &value);
+
 		//Use the list index to get closer to the target chunk
-		Chunck_P putWorkingChunk = getFloorChunckByIndex(key);
+		Chunck_P putWorkingChunk = getFloorChunckByIndex(fixedKey);
 
 		retryState = KiwiPQ::SemiRetry_e;
 		while(retryState == KiwiPQ::SemiRetry_e) {
 			//This is an effort to get to the best target chunk even if the index is not "best updated"
-			putWorkingChunk = getFloorChunckByIteration(key, putWorkingChunk);
+			putWorkingChunk = getFloorChunckByIteration(fixedKey, putWorkingChunk);
 
 			//Check if the chunk in the middle of specific rebalance stage (according to the java code, chunk.creator != null (IsInfant)).
 			//	If the chunk is in the middle of a rebalance operation, then we need to wait until the rebalance is finished
@@ -37,7 +69,7 @@ void KiwiPQ::Insert(unsigned int key, int value) {
 			}
 
 			//try to reserve in-chunk-space for the new key-val pair. If failed then ret val < 0
-			int allocatedOrderArrIndex = putWorkingChunk->pairSpaceAlloc(key, value);
+			int allocatedOrderArrIndex = putWorkingChunk->pairSpaceAlloc(fixedKey, value);
 
 			if (allocatedOrderArrIndex < 0) {
 				//Call rebalance. if null is returned, make full restart
@@ -68,7 +100,7 @@ void KiwiPQ::Insert(unsigned int key, int value) {
 			}
 
 			// Allocation is done (and published) and has a version, all that is left is to insert it into the chunk's linked list
-			putWorkingChunk->setPairInChunkSpace(allocatedOrderArrIndex, key);
+			putWorkingChunk->setPairInChunkSpace(allocatedOrderArrIndex, fixedKey);
 
 			//finished the insert, clear declaration if scans
 
