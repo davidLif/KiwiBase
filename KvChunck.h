@@ -50,6 +50,7 @@ public:
 	void setPairInChunkSpace(int orderArrIndex, K key);
 
 	bool findValue(K key, V * outValP);
+	bool popMin(V * outValP);
 
 	void clearThreadPpaDecleration();
 

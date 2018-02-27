@@ -29,6 +29,12 @@ bool KvChunck<K,V>::findValue(K key, V * outValP){
 }
 
 template <class K, class V>
+bool KvChunck<K,V>::popMin(V * outValP){
+	outValP = NULL;
+	return false;
+}
+
+template <class K, class V>
 bool KvChunck<K,V>::infantChunkRebalancing(){
 	if (m_parent != NULL) {
 		m_parent.rebalance();

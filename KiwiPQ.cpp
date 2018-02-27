@@ -14,11 +14,23 @@ KiwiPQ::KiwiPQ() : Abs_PriorityQueue<unsigned int, int>::Abs_PriorityQueue() {
 }
 
 int KiwiPQ::popMin() {
+
 	//get the first chunk out of the index
+	Chunck_P currWorkingChunk = getFloorChunckByIndex(0); //Because 0 is the min of unsinged int is 0
 
-	//ask chunk to popMin
+	while (currWorkingChunk != NULL) {
+		//ask chunk to popMin
+		int * outValP = NULL;
+		bool chunkHasItem = currWorkingChunk->popMin(outValP);
 
-	//if not item is returned, try the next one
+		//if not item is returned, try the next one
+		if (chunkHasItem) {
+			return *outValP;
+		}
+		else {
+			currWorkingChunk = currWorkingChunk->getNextChunk();
+		}
+	}
 
 	return -1;
 }
@@ -88,7 +100,7 @@ void KiwiPQ::insert(unsigned int key, int value) {
 			// Try to update the version to current version, but use whatever version is successfully set
 			// reading & setting version AFTER publishing ensures that anyone who sees this put op has
 			// a version which is at least the version we're setting, or is otherwise setting the version itself
-			int putVersion = putWorkingChunk->setPairVersion(allocatedOrderArrIndex, globalTreeVersion);
+			int putVersion = putWorkingChunk->setPairVersion(allocatedOrderArrIndex, m_globalTreeVersion);
 
 			if (putVersion == CHUNK_FREEZE_VERSION) {
 				//Clear put operation from chunk ppa (if scan), consider rebalance and semi-retry
