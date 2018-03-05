@@ -37,7 +37,7 @@ bool KvChunck<K,V>::popMin(V * outValP){
 template <class K, class V>
 bool KvChunck<K,V>::infantChunkRebalancing(){
 	if (m_parent != NULL) {
-		m_parent.rebalance();
+		m_parent->rebalance();
 		return true;
 	}
 	else {

@@ -40,7 +40,7 @@ private:
 	//rebalance vars
 	KvChunck<K,V> * m_parent;
 
-	PutPendingItem m_ppa[];
+	PutPendingItem * m_ppa;
 
 public:
 	KvChunck(K minKey, int maxNumOfOperatingThreads);
