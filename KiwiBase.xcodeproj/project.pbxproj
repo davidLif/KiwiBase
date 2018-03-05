@@ -1,0 +1,278 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		51587043204DD2E7001C7E07 /* KiwiPQ.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51587039204DD2E7001C7E07 /* KiwiPQ.cpp */; };
+		51587044204DD2E7001C7E07 /* KiwiPQ.d in Sources */ = {isa = PBXBuildFile; fileRef = 5158703A204DD2E7001C7E07 /* KiwiPQ.d */; };
+		51587045204DD2E7001C7E07 /* KvChunck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5158703C204DD2E7001C7E07 /* KvChunck.cpp */; };
+		51587046204DD2E7001C7E07 /* KvChunck.d in Sources */ = {isa = PBXBuildFile; fileRef = 5158703D204DD2E7001C7E07 /* KvChunck.d */; };
+		51587048204DD2E7001C7E07 /* PutPendingItem.d in Sources */ = {isa = PBXBuildFile; fileRef = 51587041204DD2E7001C7E07 /* PutPendingItem.d */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5158702C204DD1CD001C7E07 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5158702E204DD1CD001C7E07 /* KiwiBase */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = KiwiBase; sourceTree = BUILT_PRODUCTS_DIR; };
+		51587038204DD2E7001C7E07 /* Abs_PriorityQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Abs_PriorityQueue.h; sourceTree = "<group>"; };
+		51587039204DD2E7001C7E07 /* KiwiPQ.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KiwiPQ.cpp; sourceTree = "<group>"; };
+		5158703A204DD2E7001C7E07 /* KiwiPQ.d */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.dtrace; path = KiwiPQ.d; sourceTree = "<group>"; };
+		5158703B204DD2E7001C7E07 /* KiwiPQ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KiwiPQ.h; sourceTree = "<group>"; };
+		5158703C204DD2E7001C7E07 /* KvChunck.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KvChunck.cpp; sourceTree = "<group>"; };
+		5158703D204DD2E7001C7E07 /* KvChunck.d */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.dtrace; path = KvChunck.d; sourceTree = "<group>"; };
+		5158703E204DD2E7001C7E07 /* KvChunck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KvChunck.h; sourceTree = "<group>"; };
+		5158703F204DD2E7001C7E07 /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
+		51587040204DD2E7001C7E07 /* PendingPuts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PendingPuts; sourceTree = "<group>"; };
+		51587041204DD2E7001C7E07 /* PutPendingItem.d */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.dtrace; path = PutPendingItem.d; sourceTree = "<group>"; };
+		51587042204DD2E7001C7E07 /* Struct_KeyChunckMeta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Struct_KeyChunckMeta.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5158702B204DD1CD001C7E07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		51587025204DD1CD001C7E07 = {
+			isa = PBXGroup;
+			children = (
+				51587038204DD2E7001C7E07 /* Abs_PriorityQueue.h */,
+				51587039204DD2E7001C7E07 /* KiwiPQ.cpp */,
+				5158703A204DD2E7001C7E07 /* KiwiPQ.d */,
+				5158703B204DD2E7001C7E07 /* KiwiPQ.h */,
+				5158703C204DD2E7001C7E07 /* KvChunck.cpp */,
+				5158703D204DD2E7001C7E07 /* KvChunck.d */,
+				5158703E204DD2E7001C7E07 /* KvChunck.h */,
+				5158703F204DD2E7001C7E07 /* makefile */,
+				51587040204DD2E7001C7E07 /* PendingPuts */,
+				51587041204DD2E7001C7E07 /* PutPendingItem.d */,
+				51587042204DD2E7001C7E07 /* Struct_KeyChunckMeta.h */,
+				5158702F204DD1CD001C7E07 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5158702F204DD1CD001C7E07 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5158702E204DD1CD001C7E07 /* KiwiBase */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5158702D204DD1CD001C7E07 /* KiwiBase */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 51587035204DD1CD001C7E07 /* Build configuration list for PBXNativeTarget "KiwiBase" */;
+			buildPhases = (
+				5158702A204DD1CD001C7E07 /* Sources */,
+				5158702B204DD1CD001C7E07 /* Frameworks */,
+				5158702C204DD1CD001C7E07 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KiwiBase;
+			productName = KiwiBase;
+			productReference = 5158702E204DD1CD001C7E07 /* KiwiBase */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		51587026204DD1CD001C7E07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Eitan-Hai Mashiah";
+				TargetAttributes = {
+					5158702D204DD1CD001C7E07 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 51587029204DD1CD001C7E07 /* Build configuration list for PBXProject "KiwiBase" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 51587025204DD1CD001C7E07;
+			productRefGroup = 5158702F204DD1CD001C7E07 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5158702D204DD1CD001C7E07 /* KiwiBase */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5158702A204DD1CD001C7E07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51587045204DD2E7001C7E07 /* KvChunck.cpp in Sources */,
+				51587046204DD2E7001C7E07 /* KvChunck.d in Sources */,
+				51587043204DD2E7001C7E07 /* KiwiPQ.cpp in Sources */,
+				51587048204DD2E7001C7E07 /* PutPendingItem.d in Sources */,
+				51587044204DD2E7001C7E07 /* KiwiPQ.d in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		51587033204DD1CD001C7E07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		51587034204DD1CD001C7E07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		51587036204DD1CD001C7E07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		51587037204DD1CD001C7E07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		51587029204DD1CD001C7E07 /* Build configuration list for PBXProject "KiwiBase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51587033204DD1CD001C7E07 /* Debug */,
+				51587034204DD1CD001C7E07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		51587035204DD1CD001C7E07 /* Build configuration list for PBXNativeTarget "KiwiBase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51587036204DD1CD001C7E07 /* Debug */,
+				51587037204DD1CD001C7E07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 51587026204DD1CD001C7E07 /* Project object */;
+}
