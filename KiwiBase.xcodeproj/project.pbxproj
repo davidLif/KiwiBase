@@ -7,11 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		51587043204DD2E7001C7E07 /* KiwiPQ.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51587039204DD2E7001C7E07 /* KiwiPQ.cpp */; };
-		51587044204DD2E7001C7E07 /* KiwiPQ.d in Sources */ = {isa = PBXBuildFile; fileRef = 5158703A204DD2E7001C7E07 /* KiwiPQ.d */; };
-		51587045204DD2E7001C7E07 /* KvChunck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5158703C204DD2E7001C7E07 /* KvChunck.cpp */; };
-		51587046204DD2E7001C7E07 /* KvChunck.d in Sources */ = {isa = PBXBuildFile; fileRef = 5158703D204DD2E7001C7E07 /* KvChunck.d */; };
-		51587048204DD2E7001C7E07 /* PutPendingItem.d in Sources */ = {isa = PBXBuildFile; fileRef = 51587041204DD2E7001C7E07 /* PutPendingItem.d */; };
+		5169DCC62054EFD700132C8B /* KiwiPQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5169DCAC2054EFD600132C8B /* KiwiPQ.a */; };
+		5169DCC72054EFD700132C8B /* KiwiPQ.d in Sources */ = {isa = PBXBuildFile; fileRef = 5169DCAD2054EFD600132C8B /* KiwiPQ.d */; };
+		5169DCC82054EFD700132C8B /* KiwiPQ.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 5169DCAE2054EFD700132C8B /* KiwiPQ.o */; };
+		5169DCC92054EFD700132C8B /* KvChunck.d in Sources */ = {isa = PBXBuildFile; fileRef = 5169DCAF2054EFD700132C8B /* KvChunck.d */; };
+		5169DCCA2054EFD700132C8B /* KvChunck.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 5169DCB02054EFD700132C8B /* KvChunck.o */; };
+		5169DCCB2054EFD700132C8B /* PutPendingItem.d in Sources */ = {isa = PBXBuildFile; fileRef = 5169DCB32054EFD700132C8B /* PutPendingItem.d */; };
+		5169DCCC2054EFD700132C8B /* PutPendingItem.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 5169DCB42054EFD700132C8B /* PutPendingItem.o */; };
+		5169DCCD2054EFD700132C8B /* PutPendingItem.d in Sources */ = {isa = PBXBuildFile; fileRef = 5169DCB62054EFD700132C8B /* PutPendingItem.d */; };
+		5169DCCE2054EFD700132C8B /* PutPendingItem.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 5169DCB72054EFD700132C8B /* PutPendingItem.o */; };
+		5169DCCF2054EFD700132C8B /* KiwiPQ.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5169DCBA2054EFD700132C8B /* KiwiPQ.cpp */; };
+		5169DCD02054EFD700132C8B /* KiwiPQ.d in Sources */ = {isa = PBXBuildFile; fileRef = 5169DCBB2054EFD700132C8B /* KiwiPQ.d */; };
+		5169DCD12054EFD700132C8B /* KvChunck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5169DCBD2054EFD700132C8B /* KvChunck.cpp */; };
+		5169DCD22054EFD700132C8B /* KvChunck.d in Sources */ = {isa = PBXBuildFile; fileRef = 5169DCBE2054EFD700132C8B /* KvChunck.d */; };
+		5169DCD32054EFD700132C8B /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = 5169DCC02054EFD700132C8B /* makefile */; };
+		5169DCD42054EFD700132C8B /* PutPendingItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5169DCC22054EFD700132C8B /* PutPendingItem.cpp */; };
+		5169DCD52054EFD700132C8B /* PutPendingItem.d in Sources */ = {isa = PBXBuildFile; fileRef = 5169DCC42054EFD700132C8B /* PutPendingItem.d */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,17 +39,31 @@
 
 /* Begin PBXFileReference section */
 		5158702E204DD1CD001C7E07 /* KiwiBase */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = KiwiBase; sourceTree = BUILT_PRODUCTS_DIR; };
-		51587038204DD2E7001C7E07 /* Abs_PriorityQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Abs_PriorityQueue.h; sourceTree = "<group>"; };
-		51587039204DD2E7001C7E07 /* KiwiPQ.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KiwiPQ.cpp; sourceTree = "<group>"; };
-		5158703A204DD2E7001C7E07 /* KiwiPQ.d */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.dtrace; path = KiwiPQ.d; sourceTree = "<group>"; };
-		5158703B204DD2E7001C7E07 /* KiwiPQ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KiwiPQ.h; sourceTree = "<group>"; };
-		5158703C204DD2E7001C7E07 /* KvChunck.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KvChunck.cpp; sourceTree = "<group>"; };
-		5158703D204DD2E7001C7E07 /* KvChunck.d */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.dtrace; path = KvChunck.d; sourceTree = "<group>"; };
-		5158703E204DD2E7001C7E07 /* KvChunck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KvChunck.h; sourceTree = "<group>"; };
-		5158703F204DD2E7001C7E07 /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
-		51587040204DD2E7001C7E07 /* PendingPuts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PendingPuts; sourceTree = "<group>"; };
-		51587041204DD2E7001C7E07 /* PutPendingItem.d */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.dtrace; path = PutPendingItem.d; sourceTree = "<group>"; };
-		51587042204DD2E7001C7E07 /* Struct_KeyChunckMeta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Struct_KeyChunckMeta.h; sourceTree = "<group>"; };
+		5169DCAA2054EFD600132C8B /* Abs_PriorityQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Abs_PriorityQueue.h; sourceTree = "<group>"; };
+		5169DCAC2054EFD600132C8B /* KiwiPQ.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = KiwiPQ.a; sourceTree = "<group>"; };
+		5169DCAD2054EFD600132C8B /* KiwiPQ.d */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.dtrace; path = KiwiPQ.d; sourceTree = "<group>"; };
+		5169DCAE2054EFD700132C8B /* KiwiPQ.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = KiwiPQ.o; sourceTree = "<group>"; };
+		5169DCAF2054EFD700132C8B /* KvChunck.d */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.dtrace; path = KvChunck.d; sourceTree = "<group>"; };
+		5169DCB02054EFD700132C8B /* KvChunck.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = KvChunck.o; sourceTree = "<group>"; };
+		5169DCB12054EFD700132C8B /* objects.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = objects.mk; sourceTree = "<group>"; };
+		5169DCB32054EFD700132C8B /* PutPendingItem.d */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.dtrace; path = PutPendingItem.d; sourceTree = "<group>"; };
+		5169DCB42054EFD700132C8B /* PutPendingItem.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = PutPendingItem.o; sourceTree = "<group>"; };
+		5169DCB52054EFD700132C8B /* subdir.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = subdir.mk; sourceTree = "<group>"; };
+		5169DCB62054EFD700132C8B /* PutPendingItem.d */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.dtrace; path = PutPendingItem.d; sourceTree = "<group>"; };
+		5169DCB72054EFD700132C8B /* PutPendingItem.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = PutPendingItem.o; sourceTree = "<group>"; };
+		5169DCB82054EFD700132C8B /* sources.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sources.mk; sourceTree = "<group>"; };
+		5169DCB92054EFD700132C8B /* subdir.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = subdir.mk; sourceTree = "<group>"; };
+		5169DCBA2054EFD700132C8B /* KiwiPQ.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KiwiPQ.cpp; sourceTree = "<group>"; };
+		5169DCBB2054EFD700132C8B /* KiwiPQ.d */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.dtrace; path = KiwiPQ.d; sourceTree = "<group>"; };
+		5169DCBC2054EFD700132C8B /* KiwiPQ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KiwiPQ.h; sourceTree = "<group>"; };
+		5169DCBD2054EFD700132C8B /* KvChunck.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KvChunck.cpp; sourceTree = "<group>"; };
+		5169DCBE2054EFD700132C8B /* KvChunck.d */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.dtrace; path = KvChunck.d; sourceTree = "<group>"; };
+		5169DCBF2054EFD700132C8B /* KvChunck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KvChunck.h; sourceTree = "<group>"; };
+		5169DCC02054EFD700132C8B /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
+		5169DCC22054EFD700132C8B /* PutPendingItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PutPendingItem.cpp; sourceTree = "<group>"; };
+		5169DCC32054EFD700132C8B /* PutPendingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PutPendingItem.h; sourceTree = "<group>"; };
+		5169DCC42054EFD700132C8B /* PutPendingItem.d */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.dtrace; path = PutPendingItem.d; sourceTree = "<group>"; };
+		5169DCC52054EFD700132C8B /* Struct_KeyChunckMeta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Struct_KeyChunckMeta.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +71,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5169DCC82054EFD700132C8B /* KiwiPQ.o in Frameworks */,
+				5169DCCE2054EFD700132C8B /* PutPendingItem.o in Frameworks */,
+				5169DCC62054EFD700132C8B /* KiwiPQ.a in Frameworks */,
+				5169DCCC2054EFD700132C8B /* PutPendingItem.o in Frameworks */,
+				5169DCCA2054EFD700132C8B /* KvChunck.o in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,17 +85,7 @@
 		51587025204DD1CD001C7E07 = {
 			isa = PBXGroup;
 			children = (
-				51587038204DD2E7001C7E07 /* Abs_PriorityQueue.h */,
-				51587039204DD2E7001C7E07 /* KiwiPQ.cpp */,
-				5158703A204DD2E7001C7E07 /* KiwiPQ.d */,
-				5158703B204DD2E7001C7E07 /* KiwiPQ.h */,
-				5158703C204DD2E7001C7E07 /* KvChunck.cpp */,
-				5158703D204DD2E7001C7E07 /* KvChunck.d */,
-				5158703E204DD2E7001C7E07 /* KvChunck.h */,
-				5158703F204DD2E7001C7E07 /* makefile */,
-				51587040204DD2E7001C7E07 /* PendingPuts */,
-				51587041204DD2E7001C7E07 /* PutPendingItem.d */,
-				51587042204DD2E7001C7E07 /* Struct_KeyChunckMeta.h */,
+				5169DCA92054EFD600132C8B /* KiwiBase */,
 				5158702F204DD1CD001C7E07 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,6 +96,62 @@
 				5158702E204DD1CD001C7E07 /* KiwiBase */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		5169DCA92054EFD600132C8B /* KiwiBase */ = {
+			isa = PBXGroup;
+			children = (
+				5169DCAA2054EFD600132C8B /* Abs_PriorityQueue.h */,
+				5169DCAB2054EFD600132C8B /* Debug */,
+				5169DCBA2054EFD700132C8B /* KiwiPQ.cpp */,
+				5169DCBB2054EFD700132C8B /* KiwiPQ.d */,
+				5169DCBC2054EFD700132C8B /* KiwiPQ.h */,
+				5169DCBD2054EFD700132C8B /* KvChunck.cpp */,
+				5169DCBE2054EFD700132C8B /* KvChunck.d */,
+				5169DCBF2054EFD700132C8B /* KvChunck.h */,
+				5169DCC02054EFD700132C8B /* makefile */,
+				5169DCC12054EFD700132C8B /* PendingPuts */,
+				5169DCC42054EFD700132C8B /* PutPendingItem.d */,
+				5169DCC52054EFD700132C8B /* Struct_KeyChunckMeta.h */,
+			);
+			path = KiwiBase;
+			sourceTree = "<group>";
+		};
+		5169DCAB2054EFD600132C8B /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				5169DCAC2054EFD600132C8B /* KiwiPQ.a */,
+				5169DCAD2054EFD600132C8B /* KiwiPQ.d */,
+				5169DCAE2054EFD700132C8B /* KiwiPQ.o */,
+				5169DCAF2054EFD700132C8B /* KvChunck.d */,
+				5169DCB02054EFD700132C8B /* KvChunck.o */,
+				5169DCB12054EFD700132C8B /* objects.mk */,
+				5169DCB22054EFD700132C8B /* PendingPuts */,
+				5169DCB62054EFD700132C8B /* PutPendingItem.d */,
+				5169DCB72054EFD700132C8B /* PutPendingItem.o */,
+				5169DCB82054EFD700132C8B /* sources.mk */,
+				5169DCB92054EFD700132C8B /* subdir.mk */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		5169DCB22054EFD700132C8B /* PendingPuts */ = {
+			isa = PBXGroup;
+			children = (
+				5169DCB32054EFD700132C8B /* PutPendingItem.d */,
+				5169DCB42054EFD700132C8B /* PutPendingItem.o */,
+				5169DCB52054EFD700132C8B /* subdir.mk */,
+			);
+			path = PendingPuts;
+			sourceTree = "<group>";
+		};
+		5169DCC12054EFD700132C8B /* PendingPuts */ = {
+			isa = PBXGroup;
+			children = (
+				5169DCC22054EFD700132C8B /* PutPendingItem.cpp */,
+				5169DCC32054EFD700132C8B /* PutPendingItem.h */,
+			);
+			path = PendingPuts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,11 +211,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51587045204DD2E7001C7E07 /* KvChunck.cpp in Sources */,
-				51587046204DD2E7001C7E07 /* KvChunck.d in Sources */,
-				51587043204DD2E7001C7E07 /* KiwiPQ.cpp in Sources */,
-				51587048204DD2E7001C7E07 /* PutPendingItem.d in Sources */,
-				51587044204DD2E7001C7E07 /* KiwiPQ.d in Sources */,
+				5169DCC72054EFD700132C8B /* KiwiPQ.d in Sources */,
+				5169DCD02054EFD700132C8B /* KiwiPQ.d in Sources */,
+				5169DCC92054EFD700132C8B /* KvChunck.d in Sources */,
+				5169DCD12054EFD700132C8B /* KvChunck.cpp in Sources */,
+				5169DCD32054EFD700132C8B /* makefile in Sources */,
+				5169DCCD2054EFD700132C8B /* PutPendingItem.d in Sources */,
+				5169DCD22054EFD700132C8B /* KvChunck.d in Sources */,
+				5169DCCF2054EFD700132C8B /* KiwiPQ.cpp in Sources */,
+				5169DCD42054EFD700132C8B /* PutPendingItem.cpp in Sources */,
+				5169DCCB2054EFD700132C8B /* PutPendingItem.d in Sources */,
+				5169DCD52054EFD700132C8B /* PutPendingItem.d in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,7 +319,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = /usr/local/include;
-				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					"$(PROJECT_DIR)/KiwiBase/Debug",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -246,7 +331,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = /usr/local/include;
-				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					"$(PROJECT_DIR)/KiwiBase/Debug",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
