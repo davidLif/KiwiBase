@@ -28,12 +28,10 @@ public:
 
 private:
 	forward_list<Chunck_P> m_chunckLst;
-
 	int m_globalTreeVersion;
 
 	int getValue(unsigned int key);
 	unsigned int priorityKeyRecalc(unsigned int key, int numOfRetries, int * elementP) { return key;};
-
 	Chunck_P getFloorChunckByIndex(unsigned int key);
 	Chunck_P getFloorChunckByIteration(unsigned int key, Chunck_P searchStartChunk);
 

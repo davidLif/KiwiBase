@@ -14,7 +14,6 @@ KiwiPQ::KiwiPQ() : Abs_PriorityQueue<unsigned int, int>::Abs_PriorityQueue() {
 }
 
 int KiwiPQ::popMin() {
-
 	//get the first chunk out of the index
 	Chunck_P currWorkingChunk = getFloorChunckByIndex(0); //Because 0 is the min of unsinged int is 0
 

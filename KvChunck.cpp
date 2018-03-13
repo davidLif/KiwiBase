@@ -6,6 +6,7 @@
  */
 
 #include "KvChunck.h"
+#include "Rebalancing/Rebalance.h"
 
 template <class K, class V>
 KvChunck<K,V>::KvChunck(K minKey, int maxNumOfOperatingThreads) {
@@ -32,6 +33,11 @@ template <class K, class V>
 bool KvChunck<K,V>::popMin(V * outValP){
 	outValP = NULL;
 	return false;
+}
+
+template <class K, class V>
+void KvChunck<K,V>::freeze() {
+	//TODO
 }
 
 template <class K, class V>
