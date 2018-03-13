@@ -11,6 +11,7 @@
 #include "../KvChunck.h"
 
 #define MAX_AFTER_MERGE_PART 0.5
+#define COUNT_COMPACTION 0
 
 template <class K, class V>
 Rebalance<K,V>::Rebalance(KvChunck<K,V> * startingChunk) {
@@ -21,21 +22,32 @@ Rebalance<K,V>::Rebalance(KvChunck<K,V> * startingChunk) {
 
 template <class K, class V>
 void Rebalance<K,V>::engageChunks() {
-	//Policy should be a list of static fields (like Compact)
-	KvChunck<K,V> * firstChunk = m_startingChunk;
-	KvChunck<K,V> * lastChunk = m_startingChunk;
-	int chunksInRange = 1;
-	int itemsInRange = firstChunk->getCompactedCount();
-	int maxAfterMergeItems = (int)(CHUNK_MAX_ITEMS * MAX_AFTER_MERGE_PART);
+	RebalancePolicy<K,V> policy(m_startingChunk);
 
 	while(true) {
 		KvChunck<K,V> * next = m_nextChunkToEngae;
 		if (next == NULL) break;
 
+		Rebalance<K,V> * nextEngagedRebalance = next->engage(this);
+		if (nextEngagedRebalance != this && next == m_startingChunk) {
+			return nextEngagedRebalance->engageChunks();
+		}
 
+		/* policy caches last discovered  interval [first, last] of engaged range
+		   to get next candidate policy traverses from first backward,
+		   from last forward to find non-engaged chunks connected to the engaged interval
+		   if we return null here the policy decided to terminate the engagement loop */
+		KvChunck<K,V> * candidate = policy->findNextCandidate();
+
+		// if fail to CAS here, another thread has updated next candidate
+		// continue to while loop and try to engage it
+		m_nextChunkToEngae.compare_exchange_strong(next, candidate);
 	}
 
+	policy->updateRangeView();
+	vector<KvChunck<K,V> *> engaded = createEngagedList(policy->getFirstChunkInRange());
 
+	m_engagedChunks.compare_exchange_strong(NULL, engaded); //By java, countCompactions is always false
 }
 
 template <class K, class V>
