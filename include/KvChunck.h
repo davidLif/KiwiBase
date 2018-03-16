@@ -10,7 +10,7 @@
 
 #include <cstddef>
 #include "Struct_KeychunckMeta.h"
-#include "PendingPuts/PutPendingItem.h"
+#include "PutPendingItem.h"
 
 #define CHUNK_EMPTY_VERSION 0
 #define CHUNK_FREEZE_VERSION 1

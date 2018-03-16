@@ -1,26 +1,33 @@
-CXXFLAGS =	-O0 -g3 -Wall -fmessage-length=0
-LINK_LIBRARY_COMMAND = ar -rcs
-COMPILE_COMMAND = g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD
+CC := g++
+# CC := clang --analyze
+SRCDIR := src
+BUILDDIR := build
+BINDIR := bin
+TARGET := $(BINDIR)/runner
 
-OBJS = KiwiPQ.o KvChunck.o PutPendingItem.o
+SRCEXT := cpp
+SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
+OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
+CFLAGS := -g -Wall # -O0 -g3 -Wall -fmessage-length=0 -MMD
+# LIB := -pthread -lmongoclient -L lib -lboost_thread-mt -lboost_filesystem-mt -lboost_system-mt 
+INC := -I include -I /usr/local/include
 
-LIBS =
+all: $(TARGET) tester
 
-TARGET = KiwiPQ.a	
+$(TARGET): $(OBJECTS)
+	@echo " Linking..."
+	@echo " $(CC) $^ -o $(TARGET) $(LIB)"; $(CC) $^ -o $(TARGET) $(LIB)
 
-KiwiPQ.o: KiwiPQ.cpp KiwiPQ.h KvChunck.o
-	$(COMPILE_COMMAND) KiwiPQ.cpp -o KiwiPQ.o
-
-KvChunck.o: KvChunck.cpp KvChunck.h Struct_KeychunckMeta.h PutPendingItem.o
-	$(COMPILE_COMMAND) KvChunck.cpp -o KvChunck.o
-
-PutPendingItem.o: PendingPuts/PutPendingItem.cpp PendingPuts/PutPendingItem.h
-	$(COMPILE_COMMAND) PendingPuts/PutPendingItem.cpp -o PutPendingItem.o
-
-$(TARGET):	$(OBJS)
-	$(LINK_LIBRARY_COMMAND) $(TARGET) $(OBJS) $(LIBS)
-
-all:	KiwiPQ.a
+$(BUILDDIR)/%.o: $(SRCDIR)/%.$(SRCEXT)
+	@mkdir -p $(BUILDDIR) $(BINDIR)
+	@echo " $(CC) $(CFLAGS) $(INC) -c -o $@ $<"; $(CC) $(CFLAGS) $(INC) -c -o $@ $<
 
 clean:
-	rm -f $(OBJS) $(TARGET)
+	@echo " Cleaning..."; 
+	@echo " $(RM) -r $(BUILDDIR) $(BINDIR)"; $(RM) -r $(BUILDDIR) $(BINDIR)
+
+# Tests
+tester:
+	$(CC) $(CFLAGS) test/tester.cpp $(INC) $(LIB) -o $(BINDIR)/tester
+
+.PHONY: clean
