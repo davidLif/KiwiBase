@@ -11,6 +11,7 @@
 #include <atomic>
 #include <cstddef>
 #include "Struct_KeychunckMeta.h"
+<<<<<<< HEAD:KvChunck.h
 #include "PendingPuts/PutPendingItem.h"
 #include "Utils/MarkableReference.h"
 
@@ -18,6 +19,9 @@
 template <class K, class V> class Rebalance;
 
 using namespace std;
+=======
+#include "PutPendingItem.h"
+>>>>>>> ba62069bc0b730abd9eefb785905a4437635c47e:include/KvChunck.h
 
 #define CHUNK_EMPTY_VERSION 0
 #define CHUNK_FREEZE_VERSION 1
