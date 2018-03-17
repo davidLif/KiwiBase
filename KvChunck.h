@@ -50,6 +50,7 @@ private:
 
 	//rebalance vars
 	atomic<Rebalance<K,V> *> m_rebalancer;
+	atomic<int *> m_test;
 	KvChunck<K,V> * m_parent;
 
 	PutPendingItem * m_ppa;
@@ -75,11 +76,21 @@ public:
 
 	//Rebalance methods
 	KvChunck<K,V> * rebalance();
-	static bool shouldRebalance(KvChunck<K,V> * chunk); //TODO : move this to rebalance class
+	static bool shouldRebalance(KvChunck<K,V> * chunk) {
+		//TODO : move this to rebalance class
+		return false;
+	}
 	void freeze();
 	Rebalance<K,V> * engage(Rebalance<K,V> * rebalancer) {
-		m_rebalancer.compare_exchange_strong(NULL, rebalancer);
+		Rebalance<K,V> * nullRebalancer = NULL;
+		m_rebalancer.compare_exchange_strong(nullRebalancer, rebalancer);
 		return m_rebalancer;
+	}
+
+	int * testTest(int * input){
+		int * null = NULL;
+		m_test.compare_exchange_strong(null, input);
+		return m_test;
 	}
 
 	//Stats function

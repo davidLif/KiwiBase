@@ -24,8 +24,8 @@ private:
 	KvChunck<K,V> * m_startingChunk;
 	atomic<KvChunck<K,V> *> m_nextChunkToEngae;
 	atomic<bool> m_freezedItems;
-	atomic<vector<KvChunck<K,V> *>> m_engagedChunks;
-	atomic<vector<KvChunck<K,V> *>> m_compactedChunks;
+	atomic<vector<KvChunck<K,V> *> *> m_engagedChunks;
+	atomic<vector<KvChunck<K,V> *> *> m_compactedChunks;
 
 	vector<KvChunck<K,V> *> createEngagedList(KvChunck<K,V> * firsChunkInRange);
 

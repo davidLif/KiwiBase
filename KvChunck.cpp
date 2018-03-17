@@ -7,6 +7,9 @@
 
 #include "KvChunck.h"
 #include "Rebalancing/Rebalance.h"
+#include "PendingPuts/PutPendingItem.h"
+
+template class  KvChunck<unsigned int, int>;
 
 template <class K, class V>
 KvChunck<K,V>::KvChunck(K minKey, int maxNumOfOperatingThreads) {
@@ -24,6 +27,16 @@ int KvChunck<K,V>::pairSpaceAlloc(K key, V value){
 }
 
 template <class K, class V>
+int KvChunck<K,V>::setPairVersion(int orderArrIndex, int version) {
+	return 1;
+}
+
+template <class K, class V>
+void KvChunck<K,V>::setPairInChunkSpace(int orderArrIndex, K key) {
+
+}
+
+template <class K, class V>
 bool KvChunck<K,V>::findValue(K key, V * outValP){
 	outValP = NULL;
 	return false;
@@ -38,6 +51,11 @@ bool KvChunck<K,V>::popMin(V * outValP){
 template <class K, class V>
 void KvChunck<K,V>::freeze() {
 	//TODO
+}
+
+template <class K, class V>
+KvChunck<K,V> * KvChunck<K,V>::rebalance() {
+	return NULL;
 }
 
 template <class K, class V>
