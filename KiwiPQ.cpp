@@ -17,8 +17,6 @@ int KiwiPQ::popMin() {
 	//get the first chunk out of the index
 	Chunck_P currWorkingChunk = getFloorChunckByIndex(0); //Because 0 is the min of unsinged int is 0
 
-	int * a = NULL;
-	currWorkingChunk->testTest(a);
 	while (currWorkingChunk != NULL) {
 		//ask chunk to popMin
 		int * outValP = NULL;

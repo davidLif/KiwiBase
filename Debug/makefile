@@ -20,7 +20,7 @@ PutPendingItem.o: ../PendingPuts/PutPendingItem.cpp ../PendingPuts/PutPendingIte
 RebalancePolicy.o: ../Rebalancing/RebalancePolicy.cpp ../Rebalancing/RebalancePolicy.h ../KvChunck.h ../KvChunck.cpp
 	$(COMPILE_COMMAND) ../Rebalancing/RebalancePolicy.cpp -o RebalancePolicy.o
 
-Rebalance.o: ../Rebalancing/Rebalance.cpp ../Rebalancing/Rebalance.h ../KvChunck.h ../KvChunck.cpp ../Rebalancing/Compactor.h ../Rebalancing/RebalancePolicy.h ../Rebalancing/RebalancePolicy.cpp
+Rebalance.o: ../Rebalancing/Rebalance.cpp ../Rebalancing/Rebalance.h ../KvChunck.h ../KvChunck.cpp ../Rebalancing/Compactor.h RebalancePolicy.o
 	$(COMPILE_COMMAND) ../Rebalancing/Rebalance.cpp -o Rebalance.o
 	
 DummyMain.o: KiwiPQ.o ../DummyMain.cpp

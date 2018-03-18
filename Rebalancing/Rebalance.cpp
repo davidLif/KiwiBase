@@ -28,6 +28,9 @@ void Rebalance<K,V>::engageChunks() {
 		KvChunck<K,V> * next = m_nextChunkToEngae;
 		if (next == NULL) break;
 
+		//TODO - we got a problem here -  when should a rebalancer be freed?
+		//	even if we finished rebalancing, other might call "engageChunks" on it.
+		// Suggestion A - count references?
 		Rebalance<K,V> * nextEngagedRebalance = next->engage(this);
 		if (nextEngagedRebalance != this && next == m_startingChunk) {
 			return nextEngagedRebalance->engageChunks();

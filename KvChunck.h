@@ -77,8 +77,7 @@ public:
 	//Rebalance methods
 	KvChunck<K,V> * rebalance();
 	static bool shouldRebalance(KvChunck<K,V> * chunk) {
-		//TODO : move this to rebalance class
-		return false;
+		return false; //TODO : move this to rebalance class, and fill with logic
 	}
 	void freeze();
 	Rebalance<K,V> * engage(Rebalance<K,V> * rebalancer) {
@@ -86,11 +85,11 @@ public:
 		m_rebalancer.compare_exchange_strong(nullRebalancer, rebalancer);
 		return m_rebalancer;
 	}
-
-	int * testTest(int * input){
-		int * null = NULL;
-		m_test.compare_exchange_strong(null, input);
-		return m_test;
+	bool isEngagedToGivenRebalancer(Rebalance<K,V> * rebalancerInput) {
+		return m_rebalancer == rebalancerInput;
+	}
+	bool isRebalanceCandidate() {
+		return (m_rebalancer == NULL) && (m_parent == NULL);
 	}
 
 	//Stats function
