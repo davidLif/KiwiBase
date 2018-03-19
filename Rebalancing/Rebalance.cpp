@@ -83,7 +83,7 @@ void Rebalance<K,V>::compact() {
 template <class K, class V>
 vector<KvChunck<K,V> *> Rebalance<K,V>::getCompactedChunks() {
 	if (!isCompact()) {
-		throw std::exception("Trying to get compacted chunks before compaction stage completed");
+		throw std::runtime_error("Trying to get compacted chunks before compaction stage completed");
 	}
 	else {
 		return m_compactedChunks;
@@ -93,7 +93,7 @@ vector<KvChunck<K,V> *> Rebalance<K,V>::getCompactedChunks() {
 template <class K, class V>
 vector<KvChunck<K,V> *> Rebalance<K,V>::getEngagedChunks() {
 	if (!isEngaged()) {
-		throw std::exception("Trying to get engaged before engagement stage completed");
+		throw std::runtime_error("Trying to get engaged before engagement stage completed");
 	}
 	else {
 		return m_engagedChunks;
@@ -105,13 +105,13 @@ vector<KvChunck<K,V> *> Rebalance<K,V>::createEngagedList(KvChunck<K,V> * firsCh
 	vector<KvChunck<K,V> *> engadedNewLst = new vector<KvChunck<K,V> *>();
 
 	KvChunck<K,V> * currChunkP = firsChunkInRange;
-	while (currChunkP != NULL && currChunkP.isEngaded(this)) {
+	while (currChunkP != NULL && currChunkP->isEngaded(this)) {
 		engadedNewLst.insert(currChunkP);
 		currChunkP = currChunkP->m_next.getRef();
 	}
 
 	if (engadedNewLst.size() == 0) {
-		throw std::exception("CreateEngagedList has returned a size 0 list");
+		throw std::runtime_error("CreateEngagedList has returned a size 0 list");
 	}
 
 	return engadedNewLst;
