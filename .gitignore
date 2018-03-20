@@ -1,0 +1,8 @@
+*.o
+*.a
+.cproject
+.project
+*.exe
+*.settings
+*.prefs
+*.mk
