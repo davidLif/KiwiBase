@@ -9,7 +9,7 @@
 #include "Rebalancing/Rebalance.h"
 #include "PendingPuts/PutPendingItem.h"
 
-template class  KvChunck<unsigned int, int>;
+/* template class  KvChunck<unsigned int, int>;
 
 template <class K, class V>
 KvChunck<K,V>::KvChunck(K minKey, int maxNumOfOperatingThreads) {
@@ -98,3 +98,4 @@ KvChunck<K,V>::~KvChunck() {
 
 	delete[] m_ppa;
 }
+*/

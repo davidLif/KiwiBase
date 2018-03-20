@@ -2,17 +2,17 @@ CXXFLAGS =	-O0 -g3 -Wall -fmessage-length=0
 LINK_LIBRARY_COMMAND = g++ -o
 COMPILE_COMMAND = g++ -O0 -g -c -Wall -fmessage-length=0 -MMD
 
-OBJS = KiwiPQ.o KvChunck.o PutPendingItem.o Rebalance.o RebalancePolicy.o DummyMain.o
+OBJS = KiwiPQ.o PutPendingItem.o Rebalance.o RebalancePolicy.o DummyMain.o
 
 LIBS =
 
 TARGET = KiwiTest	
 
-KiwiPQ.o: KiwiPQ.cpp KiwiPQ.h KvChunck.o
+KiwiPQ.o: KiwiPQ.cpp KiwiPQ.h KvChunck.h Struct_KeychunckMeta.h PutPendingItem.o Utils/MarkableReference.h Rebalancing/Rebalance.h KiwiConfigDefinitions.h
 	$(COMPILE_COMMAND) KiwiPQ.cpp -o KiwiPQ.o
 
-KvChunck.o: KvChunck.cpp KvChunck.h Struct_KeychunckMeta.h PutPendingItem.o Utils/MarkableReference.h Rebalancing/Rebalance.h KiwiConfigDefinitions.h
-	$(COMPILE_COMMAND) KvChunck.cpp -o KvChunck.o
+#KvChunck.o: KvChunck.cpp KvChunck.h Struct_KeychunckMeta.h PutPendingItem.o Utils/MarkableReference.h Rebalancing/Rebalance.h KiwiConfigDefinitions.h
+#	$(COMPILE_COMMAND) KvChunck.cpp -o KvChunck.o
 
 PutPendingItem.o: PendingPuts/PutPendingItem.cpp PendingPuts/PutPendingItem.h 
 	$(COMPILE_COMMAND) PendingPuts/PutPendingItem.cpp -o PutPendingItem.o
