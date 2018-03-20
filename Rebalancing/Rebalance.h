@@ -27,7 +27,7 @@ private:
 	atomic<vector<KvChunck<K,V> *> *> m_engagedChunks;
 	atomic<vector<KvChunck<K,V> *> *> m_compactedChunks;
 
-	vector<KvChunck<K,V> *> createEngagedList(KvChunck<K,V> * firsChunkInRange);
+	vector<KvChunck<K,V> *> * createEngagedList(KvChunck<K,V> * firsChunkInRange);
 
 public:
 	Rebalance(KvChunck<K,V> * startingChunk);
@@ -40,8 +40,8 @@ public:
 	bool isEngaged() { return m_engagedChunks != NULL; }
 	bool isFreezed() { return m_freezedItems; }
 
-	vector<KvChunck<K,V> *> getCompactedChunks();
-	vector<KvChunck<K,V> *> getEngagedChunks();
+	vector<KvChunck<K,V> *> * getCompactedChunks();
+	vector<KvChunck<K,V> *> * getEngagedChunks();
 
 	virtual ~Rebalance();
 };

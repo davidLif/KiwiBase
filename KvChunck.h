@@ -10,6 +10,7 @@
 
 #include <atomic>
 #include <cstddef>
+#include "KiwiConfigDefinitions.h"
 #include "Struct_KeychunckMeta.h"
 #include "PendingPuts/PutPendingItem.h"
 #include "Utils/MarkableReference.h"
@@ -26,11 +27,6 @@ using namespace std;
 #define VALUES_ARR_BYTES_SIZE 40 //This values tells us how many bytes m_valuesArr will take
 
 #define CHUNK_ORDER_SIZE 4
-
-#define CHUNK_MAX_ITEMS 4500
-#define CHUNK_ALLOW_DUPS 1 //true
-
-
 
 template <class K, class V>
 class KvChunck {
@@ -54,6 +50,7 @@ private:
 	KvChunck<K,V> * m_parent;
 
 	PutPendingItem * m_ppa;
+	int m_maxNumOfOperatingThreads;
 
 	//Stats fields
 	atomic<int> m_orderIndex;
@@ -61,6 +58,7 @@ private:
 
 public:
 	KvChunck(K minKey, int maxNumOfOperatingThreads);
+	KvChunck(KvChunck<K,V> * parent);
 
 	int pairSpaceAlloc(K key, V value);
 	int setPairVersion(int orderArrIndex, int version);
@@ -92,11 +90,14 @@ public:
 		return (m_rebalancer == NULL) && (m_parent == NULL);
 	}
 
+	//Compact methods
+	int getFirstItemOrderId();
+	int copyPart(KvChunck<K,V> * sourceChunk, int orderIndex, int maxCapacity);
+
 	//Stats function
 	int getFilledCount() { return m_orderIndex/CHUNK_ORDER_SIZE; } //Number of items inserted into the chunk
 	int getCompactedCount() { return getFilledCount() - m_dupsCount; } //Approximate number of items chunk may contain after compaction.
 	void incDupscount() { m_dupsCount++; }
-
 
 	virtual ~KvChunck();
 };

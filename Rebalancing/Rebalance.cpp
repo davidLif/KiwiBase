@@ -81,7 +81,7 @@ void Rebalance<K,V>::compact() {
 }
 
 template <class K, class V>
-vector<KvChunck<K,V> *> Rebalance<K,V>::getCompactedChunks() {
+vector<KvChunck<K,V> *> * Rebalance<K,V>::getCompactedChunks() {
 	if (!isCompact()) {
 		throw std::exception("Trying to get compacted chunks before compaction stage completed");
 	}
@@ -91,7 +91,7 @@ vector<KvChunck<K,V> *> Rebalance<K,V>::getCompactedChunks() {
 }
 
 template <class K, class V>
-vector<KvChunck<K,V> *> Rebalance<K,V>::getEngagedChunks() {
+vector<KvChunck<K,V> *> * Rebalance<K,V>::getEngagedChunks() {
 	if (!isEngaged()) {
 		throw std::exception("Trying to get engaged before engagement stage completed");
 	}
@@ -101,8 +101,8 @@ vector<KvChunck<K,V> *> Rebalance<K,V>::getEngagedChunks() {
 }
 
 template <class K, class V>
-vector<KvChunck<K,V> *> Rebalance<K,V>::createEngagedList(KvChunck<K,V> * firsChunkInRange) {
-	vector<KvChunck<K,V> *> engadedNewLst = new vector<KvChunck<K,V> *>();
+vector<KvChunck<K,V> *> * Rebalance<K,V>::createEngagedList(KvChunck<K,V> * firsChunkInRange) {
+	vector<KvChunck<K,V> *> * engadedNewLst = new vector<KvChunck<K,V> *>();
 
 	KvChunck<K,V> * currChunkP = firsChunkInRange;
 	while (currChunkP != NULL && currChunkP.isEngaded(this)) {
@@ -120,5 +120,8 @@ vector<KvChunck<K,V> *> Rebalance<K,V>::createEngagedList(KvChunck<K,V> * firsCh
 template <class K, class V>
 Rebalance<K,V>::~Rebalance() {
 	//The starting chunk shouldn't be destroyed here - the rebalancer chunk is created only to return the balance to the chunk
-	//(Or the force , according to the ancient prophecy)
+	//(Or the force , according to an ancient prophecy)
+
+	delete m_engagedChunks;
+	delete m_compactedChunks; //Check that we really doesn't use this vector later
 }
