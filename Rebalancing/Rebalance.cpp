@@ -106,11 +106,11 @@ vector<KvChunck<K,V> *> * Rebalance<K,V>::createEngagedList(KvChunck<K,V> * firs
 
 	KvChunck<K,V> * currChunkP = firsChunkInRange;
 	while (currChunkP != NULL && currChunkP->isEngaded(this)) {
-		engadedNewLst.insert(currChunkP);
+		engadedNewLst->insert(currChunkP);
 		currChunkP = currChunkP->m_next.getRef();
 	}
 
-	if (engadedNewLst.size() == 0) {
+	if (engadedNewLst->size() == 0) {
 		throw std::runtime_error("CreateEngagedList has returned a size 0 list");
 	}
 
