@@ -56,7 +56,7 @@ private:
 	atomic<int> m_orderIndex;
 	atomic<int> m_dupsCount;
 
-	int get(int item, int offset) { return orderArray[item+offset]; }
+	//int get(int item, int offset) { return orderArray[item+offset]; }
 
 public:
 	KvChunck(K minKey, int maxNumOfOperatingThreads){
