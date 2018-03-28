@@ -43,12 +43,10 @@ private:
 	V m_valuesArr[VALUES_ARR_BYTES_SIZE/sizeof(V)];
 	int vCounter;
 
-	MarkableReference<KvChunck<K,V>> m_next;
-	bool m_isNextMutable; //called "mark" in the article
+	MarkableReference<KvChunck<K,V>> * m_next; //"is next mutable" is the mark
 
 	//rebalance vars
 	atomic<Rebalance<K,V> *> m_rebalancer;
-	atomic<int *> m_test;
 	KvChunck<K,V> * m_parent;
 
 	PutPendingItem * m_ppa;
@@ -57,6 +55,8 @@ private:
 	//Stats fields
 	atomic<int> m_orderIndex;
 	atomic<int> m_dupsCount;
+
+	int get(int item, int offset) { return orderArray[item+offset]; }
 
 public:
 	KvChunck(K minKey, int maxNumOfOperatingThreads){
@@ -69,10 +69,10 @@ public:
 		m_maxNumOfOperatingThreads = maxNumOfOperatingThreads;
 		m_ppa = new PutPendingItem[maxNumOfOperatingThreads];
 	}
-	KvChunck(KvChunck<K,V> * parent){
+	KvChunck(KvChunck<K,V> * parent, K minKey){
 
 		m_parent = parent;
-		m_minKey = parent->m_minKey;
+		m_minKey = minKey;
 		kCounter = 0;
 		vCounter = 0;
 
@@ -87,8 +87,11 @@ public:
 
 	bool findValue(K key, V * outValP) { return false; }
 	bool popMin(V * outValP) { return false;}
+
 	K getMinKey() { return m_minKey; };
-	KvChunck<K,V> * getNextChunk() { return m_next.getRef(); };
+	K readKey(int orderIndex) { return -1; }
+
+	KvChunck<K,V> * getNextChunk() { return m_next->getRef(); };
 	bool infantChunkRebalancing() {
 		if (m_parent != NULL) {
 			m_parent->rebalance();
