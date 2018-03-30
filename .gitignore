@@ -10,11 +10,11 @@
 
 ### Xcode ###
 ## Build generated
-.DS_Store
-build/
+Debug/
 DerivedData/
 
 ## Various settings
+.DS_Store
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -36,5 +36,4 @@ xcuserdata/
 !*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
-
 
