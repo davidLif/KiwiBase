@@ -43,12 +43,10 @@ private:
 	V m_valuesArr[VALUES_ARR_BYTES_SIZE/sizeof(V)];
 	int vCounter;
 
-	MarkableReference<KvChunck<K,V>> m_next;
-	bool m_isNextMutable; //called "mark" in the article
+	MarkableReference<KvChunck<K,V>> * m_next; //"is next mutable" is the mark
 
 	// rebalance vars
 	atomic<Rebalance<K,V> *> m_rebalancer;
-	atomic<int *> m_test;
 	KvChunck<K,V> * m_parent;
 
 	PutPendingItem * m_ppa;
@@ -57,6 +55,8 @@ private:
 	// Stats fields
 	atomic<int> m_orderIndex;
 	atomic<int> m_dupsCount;
+
+	//int get(int item, int offset) { return orderArray[item+offset]; }
 
 public:
     KvChunck(K minKey, int maxNumOfOperatingThreads);
